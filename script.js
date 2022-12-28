@@ -91,16 +91,48 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  //prompt password length
+  var passwordLengthPrompt = 'length';
+
+  //prompt character choices
+  var arrayOfChoices = "choices";
+
+  return {
+    passwordLength: passwordLengthPrompt,
+    charOptions: arrayOfChoices
+  };
+
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+  //testing remove after
+  console.log('getRandom called');
+
+  // pass in boolean of user choices
+
+  // array of all characters
+
+  // for loop to concatenated array of possible characters based on user choice
+
+  // return array of possible characters
+
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  // creating variable to call getPasswordOptions function
+  var passwordOptions = getPasswordOptions();
+  // creating variable that calls getRandom function and passes a value into pipe
+  var randomArray = getRandom(passwordOptions.charOptions); 
+  // variable to store password
+  var generatedPassword = 'generated password'; 
 
+  //testing remove after
+  console.log(passwordOptions);
+
+  return generatedPassword;
 }
 
 // Get references to the #generate element
