@@ -91,11 +91,33 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  //prompt password length
-  var passwordLengthPrompt = 'length';
+  // prompt password length
+  var passwordLengthPrompt = parseInt(prompt('How many characters would you like your password to contain (between 10 - 64)?'));
+  
+  // loop to prompt for correct numnber of characters
+  for (;;) {
+    var checkLngth = passwordLengthPrompt >= 10 && passwordLengthPrompt <= 64;
 
-  //prompt character choices
-  var arrayOfChoices = "choices";
+    if(checkLngth) break;
+    passwordLengthPrompt =  parseInt(prompt('Please confirm a number between 10 and 64.'));
+  };
+
+  // prompt character choices
+  for (;;) {
+    var passUpprCs = confirm('Would you like uppercase characters?');
+    var passLwrCs = confirm('Would you like lowercase characters?');
+    var passNm = confirm('Would you like numeric characters?');
+    var passSpcl = confirm('Would you like special characters (i.e., $%£&)?');
+
+    var breakLoop = !passUpprCs && !passLwrCs && !passNm && !passSpcl;
+
+    if(!breakLoop) break;
+
+    alert('Please select at least one character type.');
+  };
+
+  // variable storing array of boolean options
+  var arrayOfChoices = [passUpprCs, passLwrCs, passNm, passSpcl];
 
   return {
     passwordLength: passwordLengthPrompt,
@@ -107,7 +129,7 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  //testing remove after
+  // testing remove after
   console.log('getRandom called');
 
   // pass in boolean of user choices
@@ -129,7 +151,7 @@ function generatePassword() {
   // variable to store password
   var generatedPassword = 'generated password'; 
 
-  //testing remove after
+  // testing remove after
   console.log(passwordOptions);
 
   return generatedPassword;
