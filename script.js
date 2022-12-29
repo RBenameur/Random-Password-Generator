@@ -94,7 +94,7 @@ function getPasswordOptions() {
   // prompt password length
   var passwordLengthPrompt = parseInt(prompt('How many characters would you like your password to contain (between 10 - 64)?'));
   
-  // loop to prompt for correct numnber of characters
+  // loop to prompt for correct number of characters
   for (;;) {
     var checkLngth = passwordLengthPrompt >= 10 && passwordLengthPrompt <= 64;
 
@@ -116,9 +116,10 @@ function getPasswordOptions() {
     alert('Please select at least one character type.');
   };
 
-  // variable storing array of boolean options
+  // variable storing array of boolean of character options
   var arrayOfChoices = [passUpprCs, passLwrCs, passNm, passSpcl];
 
+  // returning object of user choices
   return {
     passwordLength: passwordLengthPrompt,
     charOptions: arrayOfChoices
@@ -132,22 +133,37 @@ function getRandom(arr) {
   // testing remove after
   console.log('getRandom called');
 
-  // pass in boolean of user choices
+  // empty array to accept concatenated array of character options based on user choices
+  var concatArrOfChar = []; 
 
   // array of all characters
+  var arrOfAllChar = [upperCasedCharacters, lowerCasedCharacters, numericCharacters, specialCharacters];
 
   // for loop to concatenated array of possible characters based on user choice
+  for (var index in arr) {
+    if(arr[index]) {
+      var char = arrOfAllChar[index];
+      concatArrOfChar = concatArrOfChar.concat(char);
+    };
+  };
+
+  //testing array of user choices
+  console.log(concatArrOfChar);
 
   // return array of possible characters
+  return concatArrOfChar;
 
 }
 
 // Function to generate password with user input
 function generatePassword() {
+
   // creating variable to call getPasswordOptions function
   var passwordOptions = getPasswordOptions();
+
   // creating variable that calls getRandom function and passes a value into pipe
   var randomArray = getRandom(passwordOptions.charOptions); 
+
   // variable to store password
   var generatedPassword = 'generated password'; 
 
