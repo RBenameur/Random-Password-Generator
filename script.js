@@ -162,10 +162,19 @@ function generatePassword() {
   var passwordOptions = getPasswordOptions();
 
   // creating variable that calls getRandom function and passes a value into pipe
-  var randomArray = getRandom(passwordOptions.charOptions); 
+  var arrayOfPossibleCharacters = getRandom(passwordOptions.charOptions);
+
+  // variable storing password length
+  var generatedpasswordLength = passwordOptions.passwordLength;
 
   // variable to store password
-  var generatedPassword = 'generated password'; 
+  var generatedPassword = ''; 
+
+  // for loop to get an element from an array 
+  for (var i = 0; i < generatedpasswordLength; i++) {
+    var generateRandomIndex = Math.floor(Math.random() * arrayOfPossibleCharacters.length);
+    generatedPassword += arrayOfPossibleCharacters[generateRandomIndex];
+  };
 
   // testing remove after
   console.log(passwordOptions);
