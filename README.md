@@ -15,13 +15,13 @@ N/a
 
 ## Usage
 
-[Access password generator application](url "https://rbenameur.github.io/Random-Password-Generator/")
+[Access password generator application](https://rbenameur.github.io/Random-Password-Generator "Link to deployed github page")
 
 In order to generate password, click the 'Generate Password' button. A series of prompts will request desired password length and whether password will contain upper-case, lower-case, numeric or special characters. If conditions are not met (i.e., between 10-64 characters and contains at least one type of character previously outlined, then prompt loop will not break). The 'Your Secure Password' placeholder text will updated to generated password. 
 
-![Screenshot of password generator application before button click](url "./images/password_generator_app_before_button_click.PNG")
+![Screenshot of password generator application before button click](./images/password_generator_app_before_button_click.PNG "Screenshot of app before button click")
 
-![Screenshot of password generator application after button click](url "./images/password_generator_app_after_button_click.PNG")
+![Screenshot of password generator application after button click](./images/password_generator_app_after_button_click.PNG "Screenshot of app after button click")
 
 
 ## Credits
