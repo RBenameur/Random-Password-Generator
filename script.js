@@ -127,11 +127,8 @@ function getPasswordOptions() {
 
 }
 
-// Function for getting a random element from an array
+// Function for getting an array of valid characters based on user choice 
 function getRandom(arr) {
-
-  // testing remove after
-  console.log('getRandom called');
 
   // empty array to accept concatenated array of character options based on user choices
   var concatArrOfChar = []; 
@@ -146,9 +143,6 @@ function getRandom(arr) {
       concatArrOfChar = concatArrOfChar.concat(char);
     };
   };
-
-  //testing array of user choices
-  console.log(concatArrOfChar);
 
   // return array of possible characters
   return concatArrOfChar;
@@ -175,9 +169,6 @@ function generatePassword() {
     var generateRandomIndex = Math.floor(Math.random() * arrayOfPossibleCharacters.length);
     generatedPassword += arrayOfPossibleCharacters[generateRandomIndex];
   };
-
-  // testing remove after
-  console.log(passwordOptions);
 
   return generatedPassword;
 }
